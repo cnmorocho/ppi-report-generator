@@ -1,0 +1,15 @@
+# EditorConfig para proyectos en Python
+root = true
+
+# Configuración por defecto para todos los archivos
+[*]
+indent_style = space
+indent_size = 4
+end_of_line = lf
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
+
+# Reglas específicas para archivos Python
+[*.py]
+max_line_length = 88  # Compatible con black, el formateador popular en Python
