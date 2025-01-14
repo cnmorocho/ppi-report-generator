@@ -50,7 +50,7 @@ class PpiService:
             "AuthorizedClient": self.credentials.authorized_client,
             "ClientKey": self.credentials.client_key,
             "Content-Type": "application/json",
-            "Authorization": f"Bearer {self.token}"
+            "Authorization": f"Bearer {token}"
         }
         response = requests.get(f"{self.balance_url}{account_number}", headers=headers)
         response.raise_for_status()
