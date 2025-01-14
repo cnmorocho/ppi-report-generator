@@ -42,7 +42,7 @@ class PpiService:
         return response.json()[0]["accountNumber"]
 
 
-    def get_balance(self):
+    def get_instruments(self):
         token = self._get_token()
         account_number = self._get_account_number(token)
 
@@ -54,4 +54,4 @@ class PpiService:
         }
         response = requests.get(f"{self.balance_url}{account_number}", headers=headers)
         response.raise_for_status()
-        return response.json()
+        return response.json()["groupedInstruments"]

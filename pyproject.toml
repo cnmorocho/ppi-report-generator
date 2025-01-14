@@ -9,6 +9,10 @@ readme = "README.md"
 python = "^3.13"
 requests = "^2.32.3"
 openpyxl = "^3.1.5"
+gspread = "^6.1.4"
+google-api-python-client = "^2.158.0"
+google-auth-httplib2 = "^0.2.0"
+google-auth-oauthlib = "^1.2.1"
 
 
 [tool.poetry.group.dev.dependencies]
