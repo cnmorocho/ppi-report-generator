@@ -1,12 +1,11 @@
 import os
 from services.ppi_service import PpiCredentials, PpiService
 
-BASE_URL = os.environ.get("BASE_URL") or ""
-AUTHORIZED_CLIENT = os.environ.get("AUTHORIZED_CLIENT") or ""
-CLIENT_KEY = os.environ.get("CLIENT_KEY") or ""
-PUBLIC_KEY = os.environ.get("PUBLIC_KEY") or ""
-PRIVATE_KEY = os.environ.get("PRIVATE_KEY") or ""
-
+BASE_URL = os.getenv("BASE_URL", "")
+AUTHORIZED_CLIENT = os.getenv("AUTHORIZED_CLIENT", "")
+CLIENT_KEY = os.getenv("CLIENT_KEY", "")
+PUBLIC_KEY = os.environ.get("PUBLIC_KEY", "")
+PRIVATE_KEY = os.environ.get("PRIVATE_KEY", "")
 
 def main():
     ppi_credentials = PpiCredentials(
