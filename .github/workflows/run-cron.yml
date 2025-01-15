@@ -16,7 +16,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.11' # Especifica la versión de Python que usas
+          python-version: '^3.13' # Especifica la versión de Python que usas
 
       - name: Install Poetry
         run: |
