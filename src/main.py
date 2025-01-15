@@ -43,8 +43,8 @@ def main():
 
     for instrument_types in gruped_instruments:
         for instrument in instrument_types["instruments"]:
-            now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-            sheet.append_row(values=[now, instrument_types["name"], instrument["ticker"], instrument["description"], instrument["currency"], instrument["price"], instrument["quantity"], instrument["amount"]], value_input_option="USER_ENTERED")
+            today = datetime.now().strftime("%Y-%m-%d")
+            sheet.append_row(values=[today, instrument_types["name"], instrument["ticker"], instrument["description"], instrument["currency"], instrument["price"], instrument["quantity"], instrument["amount"]], value_input_option="USER_ENTERED")
 
 if __name__ == "__main__":
     main()
