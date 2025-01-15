@@ -37,8 +37,5 @@ jobs:
       - name: Create credentials file
         run: echo "${{ secrets.GSPREAD_CREDENTIALS_FILE }}" | base64 --decode > credentials.json
 
-      - name: Show credentials file content for debugging
-        run: cat credentials.json
-
       - name: Run your script
         run: poetry run python ./src/main.py
