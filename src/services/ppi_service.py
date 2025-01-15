@@ -14,7 +14,7 @@ class PpiService:
             raise ValueError("credentials must be an instance of PpiCredentials")
         self.base_url = base_url
         self.credentials = credentials
-        self.token_url = f"{self.base_url}/api/1.0/Account/LoginApi"
+        self.token_url = f"{self.base_url}api/1.0/Account/LoginApi"
         self.account_url = f"{self.base_url}api/1.0/Account/Accounts"
         self.balance_url = f"{self.base_url}api/1.0/Account/BalancesAndPositions?accountNumber="
 
