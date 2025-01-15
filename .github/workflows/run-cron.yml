@@ -1,0 +1,30 @@
+name: run-cron
+
+on:
+  schedule:
+    - cron: '0 21 * * *' # Ejecuta el cron todos los días a 21:00 UTC
+  workflow_dispatch: # Permite ejecutarlo manualmente desde la interfaz de GitHub
+
+jobs:
+  run-cron:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11' # Especifica la versión de Python que usas
+
+      - name: Install Poetry
+        run: |
+          curl -sSL https://install.python-poetry.org | python3 -
+          echo "export PATH=$HOME/.local/bin:$PATH" >> $GITHUB_ENV
+
+      - name: Install dependencies
+        run: poetry install --no-interaction --no-root
+
+      - name: Run your script
+        run: poetry run python ./src/main.py
