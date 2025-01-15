@@ -5,6 +5,14 @@ on:
     - cron: '0 21 * * *' # Ejecuta el cron todos los días a 21:00 UTC
   workflow_dispatch: # Permite ejecutarlo manualmente desde la interfaz de GitHub
 
+env:
+  BASE_URL: ${{ secrets.BASE_URL }}
+  AUTHORIZED_CLIENT: ${{ secrets.AUTHORIZED_CLIENT }}
+  CLIENT_KEY: ${{ secrets.CLIENT_KEY }}
+  PUBLIC_KEY: ${{ secrets.PUBLIC_KEY }}
+  PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
+  SHEET_ID: ${{ secrets.SHEET_ID }}
+
 jobs:
   run-cron:
     runs-on: ubuntu-latest
