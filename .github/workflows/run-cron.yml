@@ -35,7 +35,7 @@ jobs:
         run: poetry install --no-interaction --no-root
 
       - name: Create credentials file
-        run: echo "${{ secrets.GSPREAD_CREDENTIALS_FILE }}" > credentials.json
+        run: echo "${{ secrets.GSPREAD_CREDENTIALS_FILE }}" | sed 's/\\n/\n/g' > credentials.json
 
       - name: Run your script
         run: poetry run python ./src/main.py
