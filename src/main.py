@@ -30,7 +30,7 @@ def main():
     for instrument_types in gruped_instruments:
         for instrument in instrument_types["instruments"]:
             today = datetime.now().strftime("%Y-%m-%d")
-            worksheet.append_row(values=[today, instrument_types["name"], instrument["ticker"], instrument["description"], instrument["currency"], instrument["price"], instrument["quantity"], instrument["amount"]], value_input_option="USER_ENTERED")
+            worksheet.append_row(values=[today, instrument_types["name"], instrument["ticker"], instrument["description"], instrument["currency"], instrument["price"], instrument["quantity"], instrument["amount"]], value_input_option="USER_ENTERED", insert_data_option="INSERT_ROWS")
 
 if __name__ == "__main__":
     main()
