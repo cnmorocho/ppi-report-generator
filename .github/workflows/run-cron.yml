@@ -2,7 +2,7 @@ name: run-cron
 
 on:
   schedule:
-    - cron: '0 21 * * *' # Ejecuta el cron todos los días a 21:00 UTC
+    - cron: '0 21 * * 1-5' # Ejecuta el cron de lunes a viernes a 21:00 UTC (aprox.)
   workflow_dispatch: # Permite ejecutarlo manualmente desde la interfaz de GitHub
 
 env:
@@ -24,7 +24,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: '^3.13' # Especifica la versión de Python que usas
+          python-version: '^3.13'
 
       - name: Install Poetry
         run: |
